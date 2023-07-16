@@ -24,7 +24,8 @@ export default function ResultTable() {
             </thead>
             <tbody>
                 { !data ?? <div>No Data Found </div>}
-                {
+                {  
+                // v : value 
                     data.map((v, i) => (
                         <tr className='table-body' key={i}>
                             <td>{v?.username || ''}</td>

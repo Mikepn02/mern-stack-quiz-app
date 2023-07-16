@@ -25,5 +25,5 @@ const resultchema = new mongoose.Schema({
         default: Date.now()
      }
 })
-const Result = mongoose.model('Result',resultchemaSchema)
+const Result = mongoose.model('Result',resultchema)
 module.exports = Result
