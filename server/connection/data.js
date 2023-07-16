@@ -53,5 +53,5 @@ const question = [
   
   const answers = [3, 1, 1, 3, 2];
   
-  module.exports = { question, answers };
+  module.exports = { answers,question };
   

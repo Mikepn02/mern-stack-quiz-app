@@ -13,7 +13,7 @@ exports.getQuestions = async(req,res) => {
 exports.insertQuestion = async(req, res) => {
     try {
   
-     await Question.insertMany({ questions:question, answers:answers })
+     await Question.insertMany({ question:question, answers:answers })
       res.json({ msg: "Data saved successfully" });
   }catch (err) {
       res.status(500).json({ error: err.message });
