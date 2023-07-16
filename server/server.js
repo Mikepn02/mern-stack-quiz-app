@@ -1,16 +1,27 @@
-import express from "express";
-import morgan from "morgan";
-import  cors from "cors";
-import { config } from "dotenv";
+const express = require("express");
+const { Router } = require("express");
+const morgan = require("morgan");
+const cors = require("cors");
+const { config } = require("dotenv");
+const router = require("./routers/router");
+const connect = require('./connection/connect')
+
+
 
 const app = express()
 
-const port = process.env.PORT || 8080;
  
 app.use(morgan('tiny'));
 app.use(cors());
 app.use(express.json());
 config();
+
+const port = process.env.PORT || 8080;
+app.use('/api',router);
+
+connect();
+
+
 
 app.get('/',(req,res) => {
     try{
