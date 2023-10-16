@@ -1,4 +1,4 @@
-const Questions = [
+const Data = [
 {
     id:1,
     question: "Which of the following is true about Node.JS?",

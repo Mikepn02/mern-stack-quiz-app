@@ -26,9 +26,20 @@ export async function getServerData(url, callback){
     return callback ? callback(data) : data;
 }
 
-
 /** post server data */
 export async function postServerData(url, result, callback){
     const data = await (await axios.post(url, result))?.data;
     return callback ? callback(data) : data;
+}
+
+export const usePublishResult = (resultData) => {
+    const {result , username} = resultData;
+    (async() => {
+        try{
+          if(result != [] && !username) throw new Error("could not get the result");
+          await postServerData(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/result`,resultData,data => data)
+        }catch(error){
+            console.error(error)
+        }
+    })
 }
