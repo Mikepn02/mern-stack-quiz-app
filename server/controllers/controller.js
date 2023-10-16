@@ -41,11 +41,7 @@ exports.getResult = async(req,res) => {
      try{
     //   const result = await Result.findById(req.params.id)
     const result = await Result.find();
-      res.status(200).json({
-        data:{
-             result
-        }
-      })
+      res.status(200).json(result)
      }catch(err) {
         res.status(404).json({
             error: err.message
