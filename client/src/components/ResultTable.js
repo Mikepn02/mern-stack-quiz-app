@@ -7,7 +7,7 @@ export default function ResultTable() {
 
 
     useEffect(() => {
-        getServerData(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/result`, (res) => {
+        getServerData(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/result/`, (res) => {
             setData(res)
         })
     },[])
@@ -29,14 +29,14 @@ export default function ResultTable() {
                         <div>No Data Found </div>
                     ) : (
 
-                        data.map((v, i) => {
+                        data.map((v, i) => (
                             <tr className='table-body' key={v._id}>
                                 <td>{v?.username || ''}</td>
                                 <td>{v?.attempts || 0}</td>
                                 <td>{v?.points || 0}</td>
                                 <td>{v?.achieved || ""}</td>
                             </tr>
-                        })
+                        ) )
 
                     )}
 

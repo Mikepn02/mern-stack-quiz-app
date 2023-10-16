@@ -36,7 +36,6 @@ export const useFetchQestion = () => {
             }
         })();
     }, [dispatch]);
-
     return [getData, setGetData];
 }
 
